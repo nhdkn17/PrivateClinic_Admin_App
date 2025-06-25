@@ -1,0 +1,62 @@
+.root {
+    -fx-font-family: "System";
+}
+
+.sidebar {
+    -fx-background-color: #69C6BC;
+}
+
+.sidebar-content {
+    -fx-spacing: 5px;
+    -fx-padding: 10px;
+}
+
+.profile-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 58px;
+    -fx-pref-width: 231px;
+    -fx-alignment: center;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.menu-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-cursor: hand;
+}
+
+.menu-button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-button .image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 15px 5px 40px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-cursor: hand;
+}
+
+.main-content {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 30 0 0 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 20, 0, 0, 0);
+    -fx-padding: 10px;
+}

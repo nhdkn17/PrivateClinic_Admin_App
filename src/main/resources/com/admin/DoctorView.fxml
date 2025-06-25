@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.client.controller.DoctorController">
+    <children>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="👨‍⚕️ Quản lý Bác sĩ" />
+
+            <HBox spacing="30">
+                <VBox prefWidth="400" spacing="10">
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Thông tin bác sĩ" />
+                    <HBox alignment="CENTER" spacing="10">
+                        <Label prefWidth="100" text="Tên bác sĩ:" />
+                        <TextField fx:id="txtTenBacSi" />
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="10">
+                        <Label prefWidth="100" text="Chuyên khoa:" />
+                        <TextField fx:id="txtChuyenKhoa" />
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="10">
+                        <Label prefWidth="100" text="SĐT:" />
+                        <TextField fx:id="txtSoDienThoai" />
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="10">
+                        <Label prefWidth="100" text="Email:" />
+                        <TextField fx:id="txtEmail" />
+                    </HBox>
+
+                    <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10 0 0 0;">
+                        <Button onAction="#handleThem" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 15 8 15; -fx-cursor: hand;" text="➕ Thêm" />
+                        <Button onAction="#handleSua" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 15 8 15; -fx-cursor: hand;" text="✏ Sửa" />
+                        <Button onAction="#clearForm" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 15 8 15; -fx-cursor: hand;" text="🔄 Làm mới" />
+                    </HBox>
+                    <Pane fx:id="paneBieuDo" prefHeight="300" prefWidth="390" style="-fx-background-color: #bdc3c7; -fx-background-radius: 10;" />
+                </VBox>
+
+                <VBox prefWidth="800" spacing="10">
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Danh sách bác sĩ" />
+
+                    <HBox spacing="10">
+                        <Label text="🔍 Tìm kiếm:" translateY="5.0" />
+                        <TextField fx:id="txtTimKiem" onKeyReleased="#handleTimKiem" prefHeight="26.0" prefWidth="183.0" promptText="Nhập tên hoặc chuyên khoa..." />
+                    </HBox>
+
+                    <ScrollPane fitToWidth="true" prefHeight="600" prefWidth="800" style="-fx-border-radius: 5;">
+                        <content>
+                            <FlowPane fx:id="flowCardBacSi" hgap="10" prefWrapLength="780" style="-fx-padding: 5;" vgap="10" />
+                        </content>
+                    </ScrollPane>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

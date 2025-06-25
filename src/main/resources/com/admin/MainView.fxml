@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="1530.0" stylesheets="@CSS/main-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.MainController">
+    <children>
+        <Pane prefHeight="787.0" prefWidth="256.0" styleClass="sidebar">
+            <children>
+            <Pane layoutX="61.0" layoutY="46.0" prefHeight="135.0" prefWidth="135.0" style="-fx-background-color: white; -fx-background-radius: 20px;" />
+                <ImageView fitHeight="135.0" fitWidth="135.0" layoutX="66.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" styleClass="profile-image" translateX="-5.0" translateY="-5.0">
+                    <image>
+                        <Image url="@../../image/Clinic-logo2.png" />
+                    </image>
+                </ImageView>
+                <VBox layoutX="12.0" layoutY="229.0" prefHeight="464.0" prefWidth="231.0" styleClass="sidebar-content">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#loadDashboardContent" styleClass="menu-button" text="Bảng Điều Khiển">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-7.0">
+                                    <image>
+                                        <Image url="@../../image/dashboard_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#loadDoctorContent" styleClass="menu-button" text="Bác Sĩ">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                    <image>
+                                        <Image url="@../../image/doctor_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#loadEmployeeContent" styleClass="menu-button" text="Nhân Viên">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-27.0">
+                                    <image>
+                                        <Image url="@../../image/man.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+<!--                        <Button mnemonicParsing="false" onAction="#loadPatientContent" styleClass="menu-button" text="Bệnh Nhân">-->
+<!--                            <graphic>-->
+<!--                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">-->
+<!--                                    <image>-->
+<!--                                        <Image url="@../../image/patient_icon.png" />-->
+<!--                                    </image>-->
+<!--                                </ImageView>-->
+<!--                            </graphic>-->
+<!--                        </Button>-->
+<!--                        <Button mnemonicParsing="false" onAction="#loadAppointmentContent" styleClass="menu-button" text="Lịch Khám">-->
+<!--                            <graphic>-->
+<!--                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">-->
+<!--                                    <image>-->
+<!--                                        <Image url="@../../image/calendar_icon.png" />-->
+<!--                                    </image>-->
+<!--                                </ImageView>-->
+<!--                            </graphic>-->
+<!--                        </Button>-->
+<!--                        <Button mnemonicParsing="false" onAction="#loadMedicineContent" styleClass="menu-button" text="Lấy Thuốc">-->
+<!--                            <graphic>-->
+<!--                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">-->
+<!--                                    <image>-->
+<!--                                        <Image url="@../../image/medical_icon.png" />-->
+<!--                                    </image>-->
+<!--                                </ImageView>-->
+<!--                            </graphic>-->
+<!--                        </Button>-->
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#loadWarehouseContent" prefWidth="200.0" styleClass="menu-button" text="Kho Thuốc">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-22.0">
+                                    <image>
+                                        <Image url="@../../image/medicine_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="730.0" mnemonicParsing="false" onAction="#actionLogout" styleClass="logout-button" text="Đăng xuất">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" translateX="-49.0">
+                            <image>
+                                <Image url="@../../image/signout_icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <AnchorPane fx:id="mainContent" layoutX="256.0" prefHeight="787.0" prefWidth="1275.0" styleClass="main-content">
+
+        </AnchorPane>
+    </children>
+</Pane>

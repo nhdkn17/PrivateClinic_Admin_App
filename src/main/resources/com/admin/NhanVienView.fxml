@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml" fx:controller="com.admin.client.controller.NhanVienController">
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+
+        <Label text="Quản lý Nhân Viên" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <!-- Form nhập liệu -->
+        <HBox spacing="20">
+            <VBox spacing="10" prefWidth="600">
+                <Label text="Họ tên:"/>
+                <TextField fx:id="txtHoTen"/>
+
+                <Label text="Số điện thoại:"/>
+                <TextField fx:id="txtSoDienThoai"/>
+
+                <Label text="Email:"/>
+                <TextField fx:id="txtEmail"/>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10">
+                <Button onAction="#handleThem" text="Thêm" fx:id="btnThem" prefWidth="100"/>
+                <Button onAction="#handleCapNhat" text="Cập nhật" fx:id="btnCapNhat" prefWidth="100"/>
+                <Button onAction="#handleXoa" text="Xóa" fx:id="btnXoa" prefWidth="100"/>
+                <Button onAction="#handleLamMoi" text="Làm mới" fx:id="btnLamMoi" prefWidth="100"/>
+            </VBox>
+        </HBox>
+
+        <!-- Bảng danh sách -->
+        <TableView fx:id="tblNhanVien" prefHeight="600">
+            <columns>
+                <TableColumn fx:id="colHoTen" text="Họ tên" prefWidth="300"/>
+                <TableColumn fx:id="colSoDienThoai" text="Số điện thoại" prefWidth="200"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="300"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>
+

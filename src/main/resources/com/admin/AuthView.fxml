@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane stylesheets="@CSS/auth-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.client.controller.AuthController">
+    <Pane fx:id="authContainer" prefHeight="787" prefWidth="1530">
+        <!-- Register Page -->
+        <Pane fx:id="registerPane" prefHeight="787" prefWidth="765.0" styleClass="auth-pane">
+            <Pane layoutX="87.0" layoutY="47.0" prefHeight="706.0" prefWidth="614.0" styleClass="form-container">
+                <Button fx:id="toLoginButton" layoutX="279.0" layoutY="669.0" onAction="#showLogin" styleClass="nav-button" text="Đăng nhập" />
+                <Label alignment="CENTER" layoutX="252.0" layoutY="640.0" prefHeight="19.0" prefWidth="121.0" styleClass="nav-link" text="Đã có tài khoản?" />
+                <Label alignment="CENTER" layoutX="31.0" layoutY="21.0" prefHeight="17.0" prefWidth="562.0" styleClass="title-label" text="ĐĂNG KÝ TÀI KHOẢN" />
+                <TextField fx:id="registerEmailField" layoutX="157.0" layoutY="109.0" styleClass="text-field" />
+                <PasswordField fx:id="registerPasswordField" layoutX="157.0" layoutY="223.0" styleClass="password-field" />
+                <PasswordField fx:id="registerConfirmPasswordField" layoutX="157.0" layoutY="287.0" styleClass="password-field" />
+                <Button fx:id="registerButton" layoutX="257.0" layoutY="561.0" onAction="#handleRegister" styleClass="action-button" text="Đăng ký" />
+                <Label layoutX="157.0" layoutY="90.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Email" />
+                <Label layoutX="157.0" layoutY="150.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Vai trò" />
+                <ComboBox fx:id="registerRoleComboBox" layoutX="157.0" layoutY="168.0" prefWidth="300.0" style="-fx-background-color: #5df5a1; -fx-effect: white;" styleClass="combo-box">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="ADMIN" />
+                            <String fx:value="LE_TAN" />
+                            <String fx:value="BAC_SI" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Label layoutX="157.0" layoutY="204.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Mật khẩu" />
+                <Label layoutX="157.0" layoutY="268.0" prefHeight="19.0" prefWidth="136.0" styleClass="field-label" text="Xác nhận mật khẩu" />
+                <CheckBox fx:id="registerShowPasswordCheckBox" layoutX="157.0" layoutY="330.0" mnemonicParsing="false" text="Hiển thị mật khẩu" translateY="5.0" />
+                <TextField fx:id="registerPasswordVisibleField" disable="true" layoutX="157.0" layoutY="223.0" styleClass="text-field" visible="false" />
+                <Pane fx:id="receptionistFields" layoutX="157.0" layoutY="362.0" prefHeight="155.0" prefWidth="300.0" visible="false">
+                    <Label layoutY="14.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Họ tên" translateY="-13.0" />
+                    <TextField fx:id="receptionistNameField" layoutY="41.0" promptText="Họ tên lễ tân" translateY="-19.0" />
+                    <Label layoutY="91.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Số điện thoại" translateY="-23.0" />
+                    <TextField fx:id="receptionistPhoneField" layoutY="119.0" promptText="Số điện thoại" translateY="-30.0" />
+                </Pane>
+                <TextField fx:id="registerConfirmPasswordVisibleField" disable="true" layoutX="157.0" layoutY="287.0" styleClass="text-field" visible="false" />
+                <Pane fx:id="doctorFields" layoutX="157.0" layoutY="353.0" prefHeight="195.0" prefWidth="300.0" visible="false">
+                    <Label layoutY="6.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Họ tên" />
+                    <TextField fx:id="doctorNameField" layoutY="25.0" />
+                    <Label layoutY="67.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Chuyên Khoa" translateY="2.0" />
+                    <TextField fx:id="doctorSpecialtyField" layoutY="114.0" translateY="-25.0" />
+                    <Label layoutY="167.0" prefHeight="17.0" prefWidth="94.0" styleClass="field-label" text="Số điện thoại" translateY="-32.0" />
+                    <TextField fx:id="doctorPhoneField" layoutY="193.0" translateY="-38.0" />
+                </Pane>
+            </Pane>
+        </Pane>
+        <!-- Login Page -->
+        <Pane fx:id="loginPane" layoutX="768.0" prefHeight="787" prefWidth="765.0" styleClass="auth-pane">
+            <Pane layoutX="102.0" layoutY="50.0" prefHeight="706.0" prefWidth="586.0" styleClass="form-container">
+                <Label alignment="CENTER" layoutX="34.0" layoutY="114.0" prefHeight="17.0" prefWidth="520.0" styleClass="title-label" text="ĐĂNG NHẬP HỆ THỐNG" />
+                <TextField fx:id="loginEmailField" layoutX="143.0" layoutY="266.0" styleClass="text-field" />
+                <PasswordField fx:id="loginPasswordField" layoutX="143.0" layoutY="346.0" styleClass="password-field" />
+                <TextField fx:id="loginPasswordVisibleField" layoutX="143.0" layoutY="346.0" styleClass="text-field" visible="false" />
+                <Button fx:id="loginButton" layoutX="244.0" layoutY="447.0" onAction="#handleLogin" prefHeight="43.0" prefWidth="176.0" styleClass="action-button" text="Đăng nhập">
+                   <graphic>
+                       <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                           <image>
+                               <Image url="@../../image/log_in_icon.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                </Button>
+                <Button fx:id="toRegisterButton" layoutX="271.0" layoutY="656.0" onAction="#showRegister" styleClass="nav-button" text="Đăng ký" />
+                <Label layoutX="143.0" layoutY="239.0" prefHeight="19.0" prefWidth="136.0" styleClass="field-label" text="Email" />
+                <Label layoutX="143.0" layoutY="319.0" prefHeight="19.0" prefWidth="136.0" styleClass="field-label" text="Mật khẩu" />
+                <Label alignment="CENTER" layoutX="187.0" layoutY="626.0" prefHeight="21.0" prefWidth="214.0" styleClass="nav-link" text="Chưa có tài khoản?" />
+                <CheckBox fx:id="loginShowPasswordCheckBox" layoutX="143.0" layoutY="407.0" mnemonicParsing="false" text="Hiển thị mật khẩu" />
+            </Pane>
+        </Pane>
+    </Pane>
+    <Pane fx:id="slidingImage" maxHeight="787.0" maxWidth="768.0" prefHeight="787.0" prefWidth="768.0" StackPane.alignment="CENTER_LEFT">
+        <children>
+            <ImageView fitHeight="787" fitWidth="776.0">
+                <image>
+                    <Image url="@../../image/bg-login4.jpg" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="162.0" fitWidth="214.0" layoutX="103.0" layoutY="232.0">
+                <image>
+                    <Image url="@../../image/bg-login2.jpg" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="162.0" fitWidth="214.0" layoutX="103.0" layoutY="531.0">
+                <image>
+                    <Image url="@../../image/login2.jpg" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="162.0" fitWidth="214.0" layoutX="448.0" layoutY="531.0">
+                <image>
+                    <Image url="@../../image/login1.png" />
+                </image>
+            </ImageView>
+        </children>
+    </Pane>
+</StackPane>

@@ -1,0 +1,56 @@
+.root {
+    -fx-font-family: "System";
+}
+
+.auth-pane {
+    -fx-background-color: #69C6BC;
+}
+
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 5);
+}
+
+.title-label {
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+}
+
+.field-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+}
+
+.action-button {
+    -fx-pref-height: 35;
+    -fx-pref-width: 100;
+    -fx-background-color: #5df5a1;
+}
+
+.text-field, .password-field {
+    -fx-pref-height: 35;
+    -fx-pref-width: 300;
+}
+
+.toggle-button {
+    -fx-pref-width: 150;
+    -fx-text-fill: #333333;
+}
+
+.nav-link {
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-text-fill: #333333;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0076a3;
+    -fx-underline: true;
+    -fx-padding: 0;
+}
+
+.nav-button:hover {
+    -fx-text-fill: #005580;
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@CSS/warehouse-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.client.controller.WarehouseController">
+    <children>
+        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 28px; -fx-font-weight: bold;" text=" QUẢN LÝ KHO THUỐC">
+             <graphic>
+                 <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                         <Image url="@../../image/medicine_icon.png" />
+                     </image>
+                 </ImageView>
+             </graphic>
+        </Label>
+        <Label layoutX="22.0" layoutY="82.0" text="🔍 Tìm kiếm:" />
+        <TextField fx:id="txtSearch" layoutX="103.0" layoutY="78.0" onKeyReleased="#onSearch" prefHeight="26.0" prefWidth="272.0" promptText="Tìm kiếm theo tên thuốc hoặc công dụng..." />
+        <ScrollPane layoutX="20.0" layoutY="120.0" prefHeight="618.0" prefWidth="895.0">
+            <FlowPane fx:id="cardContainer" hgap="10" prefHeight="614.0" prefWidth="878.0" vgap="10">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+            </FlowPane>
+        </ScrollPane>
+        <VBox layoutX="923.0" layoutY="120.0" prefHeight="230.0" prefWidth="337.0" spacing="8">
+            <children>
+                <Label style="-fx-font-size: 19px; -fx-font-weight: bold;" text="Chi tiết thuốc" />
+                <HBox alignment="CENTER" prefHeight="26.0" prefWidth="283.0" spacing="5">
+                    <Label prefHeight="18.0" prefWidth="78.0" style="-fx-font-weight: bold;" text="Tên:" />
+                    <TextField fx:id="txtTenThuoc" prefHeight="26.0" prefWidth="254.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Label prefHeight="18.0" prefWidth="79.0" style="-fx-font-weight: bold;" text="Loại:" />
+                    <TextField fx:id="txtLoaiThuoc" prefHeight="26.0" prefWidth="256.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Label prefHeight="18.0" prefWidth="79.0" style="-fx-font-weight: bold;" text="Đơn vị:" />
+                    <TextField fx:id="txtDonVi" prefHeight="26.0" prefWidth="256.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Label prefHeight="18.0" prefWidth="78.0" style="-fx-font-weight: bold;" text="Giá:" />
+                    <TextField fx:id="txtGia" prefHeight="26.0" prefWidth="256.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Label prefHeight="18.0" prefWidth="78.0" style="-fx-font-weight: bold;" text="Số lượng tồn:" />
+                    <TextField fx:id="txtSoLuongTon" prefWidth="256.0" />
+                </HBox>
+            </children>
+        </VBox>
+      <Pane layoutX="927.0" layoutY="332.0" prefHeight="50.0" prefWidth="338.0" translateX="-17.0">
+         <children>
+                <Button fx:id="btnAdd" layoutX="114.0" layoutY="13.0" onAction="#onAdd" styleClass="btn-add" text="➕ Thêm" translateX="-40.0" />
+                <Button fx:id="btnEdit" layoutX="173.0" layoutY="13.0" onAction="#onEdit" styleClass="btn-primary" text="✏ Sửa" translateX="-27.0" />
+                <Button fx:id="btnDelete" layoutX="219.0" layoutY="13.0" onAction="#onDelete" styleClass="btn-danger" text="❌ Xóa" translateX="-12.0" />
+                <Button fx:id="btnRefresh" layoutX="270.0" layoutY="13.0" onAction="#onRefresh" styleClass="btn-secondary" text="🔄 Làm mới" />
+         </children>
+      </Pane>
+        <HBox layoutX="20.0" layoutY="640.0" prefHeight="90.0" prefWidth="218.0" spacing="12" />
+        <Label fx:id="lblTongSoLuong" alignment="TOP_RIGHT" layoutX="698.0" layoutY="747.0" prefHeight="20.0" prefWidth="200.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Tổng số lượng: 0" />
+          <ToggleButton fx:id="btnLowStock" layoutX="768.0" layoutY="76.0" onMouseClicked="#onFilterLowStock" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8px; -fx-font-size: 14px; -fx-font-weight: bold;" text="Thuốc sắp hết">
+             <graphic>
+                 <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                         <Image url="@../../image/filter_icon.png" />
+                     </image>
+                 </ImageView>
+             </graphic>
+          </ToggleButton>
+    </children>
+</AnchorPane>

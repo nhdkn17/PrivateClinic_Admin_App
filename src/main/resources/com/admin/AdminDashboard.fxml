@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@CSS/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.client.controller.DashboardController">
+  <children>
+    <Label layoutX="41.0" layoutY="37.0" styleClass="title-label" text="Bảng Điều Khiển - Quản Lý Phòng Khám" />
+    <HBox layoutX="41.0" layoutY="93.0" spacing="15">
+      <children>
+        <VBox prefWidth="200" style="-fx-background-color: #3498db; -fx-background-radius: 10; -fx-padding: 15px;">
+          <Label style="-fx-text-fill: white; -fx-font-size: 16;" text="👥 Bệnh nhân" />
+          <Label fx:id="lblSoBenhNhan" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+        </VBox>
+        <VBox prefWidth="200" style="-fx-background-color: #1abc9c; -fx-background-radius: 10; -fx-padding: 15px;">
+          <Label style="-fx-text-fill: white; -fx-font-size: 16;" text="📅 Lịch hẹn hôm nay" />
+          <Label fx:id="lblSoLichHen" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+        </VBox>
+        <VBox prefWidth="200" style="-fx-background-color: #e67e22; -fx-background-radius: 10; -fx-padding: 15px;">
+          <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="💊 Đơn thuốc" />
+          <Label fx:id="lblSoDonThuoc" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+        </VBox>
+        <VBox prefWidth="250" style="-fx-background-color: #e74c3c; -fx-background-radius: 10; -fx-padding: 15px;">
+          <Label style="-fx-text-fill: white; -fx-font-size: 16;" text="💰 Doanh thu hôm nay" />
+          <Label fx:id="lblDoanhThu" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+        </VBox>
+      </children>
+    </HBox>
+    <BorderPane layoutX="34.0" layoutY="200.0" prefHeight="540.0" prefWidth="653.0">
+      <top>
+        <Label style="-fx-font-size: 20px; -fx-padding: 10px; -fx-font-weight: bold;" text="Quản Lý Tài Khoản Người Dùng" />
+      </top>
+      <center>
+        <TableView fx:id="tblAccounts" prefHeight="400" prefWidth="800.0">
+          <columns>
+            <TableColumn fx:id="colEmail" prefWidth="300" text="Email" />
+            <TableColumn fx:id="colRole" prefWidth="209.60003662109375" text="Vai trò" />
+            <TableColumn fx:id="colStatus" prefWidth="140.79998779296875" text="Trạng thái" />
+          </columns>
+        </TableView>
+      </center>
+      <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10px;">
+          <Button fx:id="btnLock" onAction="#handleLockAccount" style="-fx-background-color: #ffcccc;" text="Khóa tài khoản" />
+          <Button fx:id="btnUnlock" onAction="#handleUnlockAccount" style="-fx-background-color: #ccffcc;" text="Mở khóa tài khoản" />
+        </HBox>
+      </bottom>
+    </BorderPane>
+    <Label layoutX="700.0" layoutY="200.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Tài Khoản Đang Hoạt Động" />
+
+    <ScrollPane layoutX="700.0" layoutY="244.0" prefHeight="454.0" prefWidth="544.0">
+      <content>
+        <FlowPane fx:id="cardContainer" hgap="15" prefWidth="500.0" vgap="15" />
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>
